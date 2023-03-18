@@ -6,10 +6,10 @@ public class MenuManger {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str;
+		int n;
 		Scanner sc = new Scanner(System.in);
-		str = sc.next();
-		System.out.println("str = " + str);
+		n = sc.nextInt();
+		System.out.println("int = " + n);
 	}
 
 }
