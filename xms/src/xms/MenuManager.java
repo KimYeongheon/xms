@@ -1,7 +1,5 @@
 package xms;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
-
 public class MenuManager {
 
 	public static void main(String[] args) {
