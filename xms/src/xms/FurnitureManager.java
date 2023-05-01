@@ -1,4 +1,4 @@
-package xms;
+/*package xms;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -102,8 +102,9 @@ public class FurnitureManager {
     public void viewFurniture() {
 //        System.out.println("Furniture ID:");
 //        int id=input.nextInt();
+    	System.out.println("# of registered Funitures:" + furnitures.size());
         for (int i = 0; i < furnitures.size(); i++) {
             furnitures.get(i).printInfo();
         }
     }
-}
+}*/

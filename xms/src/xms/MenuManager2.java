@@ -1,4 +1,4 @@
-package xms;
+/*package xms;
 
 import java.util.Scanner;
 
@@ -30,4 +30,4 @@ public class MenuManager2 {
             }
         }
     }
-}
+}*/

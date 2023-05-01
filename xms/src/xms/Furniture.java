@@ -1,12 +1,13 @@
-package xms;
+/*package xms;
 
 public class Furniture {
-    int id;
-    String funiture;
-    String brand;
-    int price;
-    String material;
-    String caution;
+    protected FurnitureKind kind = FurnitureKind.Wood;
+	protected int id;
+    protected String funiture;
+    protected String brand;
+    protected int price;
+    protected String material;
+    protected String caution;
 
     public Furniture(){
 
@@ -26,4 +27,4 @@ public class Furniture {
     public void printInfo(){
         System.out.println("id:"+id+" funiture: "+funiture+" brand: "+brand+" price: "+price+" material: "+material+" caution: "+caution);
     }
-}
+}*/

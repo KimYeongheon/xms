@@ -1,4 +1,4 @@
-package xms;
+/*package xms;
 
 import java.util.Scanner;
 
@@ -46,13 +46,13 @@ public class MenuManager {
         String brand= input.nextLine();
         System.out.print("Furniture cost :");
         int price = input.nextInt();
-        System.out.println(price); //ì…ë ¥ë°›ì€ ê°€ê²©ì„ í•œë²ˆ ë” ì¶œë ¥
+        System.out.println(price); //ÀÔ·Â¹ŞÀº °¡°İÀ» ÇÑ¹ø ´õ Ãâ·Â
         System.out.print("Furniture material :");
         input.nextLine();
         String material = input.nextLine();
         System.out.print("Furniture caution :");
         String caution = input.nextLine();
-        System.out.println(caution); //ì…ë ¥ë°›ì€ ì£¼ì˜ì‚¬í•­ì„ í•œë²ˆ ë” ì¶œë ¥
+        System.out.println(caution); //ÀÔ·Â¹ŞÀº ÁÖÀÇ»çÇ×À» ÇÑ¹ø ´õ Ãâ·Â
     }
     
     public static void deleteFurniture() {
@@ -72,4 +72,4 @@ public class MenuManager {
         System.out.print("Furniture identification number :");
         int id = input.nextInt();
     }
-}
+}*/
