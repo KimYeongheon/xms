@@ -3,6 +3,11 @@ package TeamprojectFurniture;
 import java.util.Scanner;
 
 public class MetalFurniture extends Furniture{
+	
+    public MetalFurniture(FurnitureKind kind){
+    	super(kind);
+    }
+	
     public void getUserInput(Scanner input){
         System.out.print("Furniture identification number :");
         int id = input.nextInt();
