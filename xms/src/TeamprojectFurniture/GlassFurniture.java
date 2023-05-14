@@ -2,7 +2,7 @@ package TeamprojectFurniture;
 
 import java.util.Scanner;
 
-public class GlassFurniture extends Furniture{
+public class GlassFurniture extends Furniture implements FurnitureInput{
     
 	protected String specialBrand;
     protected String specialCaution;
@@ -15,13 +15,16 @@ public class GlassFurniture extends Furniture{
         System.out.print("Furniture identification number :");
         int id = input.nextInt();
         this.setId(id);
+        
         System.out.print("Furniture name :");
         input.nextLine();
         String funiture = input.nextLine();
         this.setFuniture(funiture);
+        
         System.out.print("Furniture brand :");
         String brand = input.nextLine();
         this.setBrand(brand);
+        
         System.out.print("Furniture cost :");
         int price = input.nextInt();
         this.setPrice(price);
