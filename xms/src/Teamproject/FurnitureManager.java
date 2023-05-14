@@ -1,16 +1,18 @@
 package Teamproject;
 
 import TeamprojectFurniture.Furniture;
+import TeamprojectFurniture.FurnitureInput;
 import TeamprojectFurniture.FurnitureKind;
 import TeamprojectFurniture.GlassFurniture;
 import TeamprojectFurniture.MetalFurniture;
 import TeamprojectFurniture.PlasticFurniture;
+import TeamprojectFurniture.WoodFurniture;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FurnitureManager {
-    ArrayList<Furniture> furnitures = new ArrayList<Furniture>();
+    ArrayList<FurnitureInput> furnitures = new ArrayList<FurnitureInput>();
     Scanner input;
 
     FurnitureManager(Scanner input) {
@@ -19,7 +21,7 @@ public class FurnitureManager {
 
     public void addFurniture() {
         int kind=0;
-        Furniture furniture;
+        FurnitureInput furnitureInput;
         while(kind!=1&&kind!=2&&kind!=3&&kind!=4) {
             System.out.println("1 for Wood");
             System.out.println("2 for Metal");
@@ -28,27 +30,27 @@ public class FurnitureManager {
             System.out.println("Select num 1, 2, 3 or 4 for Furniture Kind: ");
             kind = input.nextInt();
             if (kind == 1) {
-                furniture=new Furniture(FurnitureKind.Wood);
-                furniture.getUserInput(input);
-                furnitures.add(furniture);
+                furnitureInput=new WoodFurniture(FurnitureKind.Wood);
+                furnitureInput.getUserInput(input);
+                furnitures.add(furnitureInput);
                 break;
             }
             else if (kind == 2) {
-                furniture=new MetalFurniture(FurnitureKind.Metal);
-                furniture.getUserInput(input);
-                furnitures.add(furniture);
+                furnitureInput=new MetalFurniture(FurnitureKind.Metal);
+                furnitureInput.getUserInput(input);
+                furnitures.add(furnitureInput);
                 break;
             }
             else if (kind==3){
-                furniture=new PlasticFurniture(FurnitureKind.Plastic);
-                furniture.getUserInput(input);
-                furnitures.add(furniture);
+                furnitureInput=new PlasticFurniture(FurnitureKind.Plastic);
+                furnitureInput.getUserInput(input);
+                furnitures.add(furnitureInput);
                 break;
             }
             else if(kind==4){
-                furniture=new GlassFurniture(FurnitureKind.Glass);
-                furniture.getUserInput(input);
-                furnitures.add(furniture);
+                furnitureInput=new GlassFurniture(FurnitureKind.Glass);
+                furnitureInput.getUserInput(input);
+                furnitures.add(furnitureInput);
                 break;
             }
             else {
@@ -80,8 +82,8 @@ public class FurnitureManager {
         System.out.print("Furniture identification number :");
         int id = input.nextInt();
         for (int i = 0; i < furnitures.size(); i++) {
-            Furniture furniture = furnitures.get(i);
-            if (furniture.getId() == id) {
+            FurnitureInput furnitureInput = furnitures.get(i);
+            if (furnitureInput.getId() == id) {
                 int num = -1;
                 while (num != 6) {
                     System.out.println("*** Furniture Info Edit Menu ***");
@@ -96,27 +98,27 @@ public class FurnitureManager {
                     if (num == 1) {
                         System.out.println("Furniture ID: ");
                         int furnitureid = input.nextInt();
-                        furniture.setId(furnitureid);
+                        furnitureInput.setId(furnitureid);
                     } else if (num == 2) {
                         System.out.println("Furniture Name: ");
                         input.nextLine();
                         String funiture = input.nextLine();
-                        furniture.setFuniture(funiture);
+                        furnitureInput.setFuniture(funiture);
                     } else if (num == 3) {
                         System.out.println("Furniture Brand: ");
                         input.nextLine();
                         String brand = input.nextLine();
-                        furniture.setBrand(brand);
+                        furnitureInput.setBrand(brand);
                     } else if (num == 4) {
                         System.out.println("Furniture Cost: ");
                         int price = input.nextInt();
-                        furniture.setPrice(price);
+                        furnitureInput.setPrice(price);
                     }
                       else if (num == 5) {
                         System.out.println("Furniture Caution: ");
                         input.nextLine();
                         String caution = input.nextLine();
-                        furniture.setCaution(caution);
+                        furnitureInput.setCaution(caution);
                     } else {
                         continue;
                     }//if
