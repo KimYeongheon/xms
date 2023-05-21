@@ -1,10 +1,11 @@
 package TeamprojectFurniture;
 
 import TeamprojectFurniture.FurnitureKind;
+import exception.CautionFormatException;
 
 import java.util.Scanner;
 
-public abstract class Furniture { //abstract를 붙임으로서 더이상 Furniture라는 객체를 생성하지 않는다는 뜻
+public abstract class Furniture implements FurnitureInput { //abstract를 붙임으로서 더이상 Furniture라는 객체를 생성하지 않는다는 뜻
     protected FurnitureKind kind = FurnitureKind.Wood;
     protected int id;
     protected String funiture;
@@ -45,7 +46,10 @@ public abstract class Furniture { //abstract를 붙임으로서 더이상 Furniture라는 �
         return caution;
     }
 
-    public void setCaution(String caution) {
+    public void setCaution(String caution) throws CautionFormatException {
+    	if (caution.length() < 3 && !caution.equals("")) {
+    		throw new CautionFormatException();
+    	}
         this.caution = caution;
     }
 
@@ -90,5 +94,63 @@ public abstract class Furniture { //abstract를 붙임으로서 더이상 Furniture라는 �
     }
     
     public abstract void printInfo();
-
+    
+    public void setFurnitureID(Scanner input) {
+        System.out.println("Furniture ID: ");
+        int furnitureid = input.nextInt();
+        this.setId(furnitureid);
+    }
+    
+    public void setFurnitureName(Scanner input) {
+        System.out.println("Furniture Name: ");
+        input.nextLine();
+        String funiture = input.nextLine();
+        this.setFuniture(funiture);
+    }
+    
+    public void setFurnitureBrand(Scanner input) {
+        System.out.println("Furniture Brand: ");
+        String brand = input.nextLine();
+        this.setBrand(brand);
+    }
+    
+    public void setFurnitureCost(Scanner input) {
+        System.out.println("Furniture Cost: ");
+        int price = input.nextInt();
+        this.setPrice(price);
+    }
+    
+    public void setFurnitureCaution(Scanner input) {
+    	String caution = "";
+    	input.nextLine();
+    	while (caution.length() < 3) {
+	        System.out.println("Furniture Caution: ");
+	        caution = input.nextLine();
+	        try {
+	        	this.setCaution(caution);
+	        } catch (CautionFormatException e) {
+	        	System.out.println("Incorrect Caution Format. Fill it out in detail.");
+	        }
+        }
+    }
+    
+    public String getKindString() {
+    	String skind = "none";
+    	switch(this.kind) {
+    	case Wood:
+    		skind = "Wood.";
+    		break;
+    	case Metal:
+    		skind = "Metal";
+    		break;
+    	case Plastic:
+    		skind = "Plastic";
+    		break;
+    	case Glass:
+    		skind = "Glass";
+    		break;
+    	default:
+    	}
+    	return skind;
+    }
 }
