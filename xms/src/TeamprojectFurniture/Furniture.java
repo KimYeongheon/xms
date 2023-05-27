@@ -3,10 +3,16 @@ package TeamprojectFurniture;
 import TeamprojectFurniture.FurnitureKind;
 import exception.CautionFormatException;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public abstract class Furniture implements FurnitureInput { //abstract를 붙임으로서 더이상 Furniture라는 객체를 생성하지 않는다는 뜻
-    protected FurnitureKind kind = FurnitureKind.Wood;
+public abstract class Furniture implements FurnitureInput, Serializable { //abstract를 붙임으로서 더이상 Furniture라는 객체를 생성하지 않는다는 뜻
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7216986756558272718L;
+	
+	protected FurnitureKind kind = FurnitureKind.Wood;
     protected int id;
     protected String funiture;
     protected String brand;

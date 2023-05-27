@@ -1,6 +1,10 @@
 package Teamproject;
 
-import TeamprojectFurniture.Furniture;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import TeamprojectFurniture.FurnitureInput;
 import TeamprojectFurniture.FurnitureKind;
 import TeamprojectFurniture.GlassFurniture;
@@ -8,14 +12,14 @@ import TeamprojectFurniture.MetalFurniture;
 import TeamprojectFurniture.PlasticFurniture;
 import TeamprojectFurniture.WoodFurniture;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
-public class FurnitureManager {
-    ArrayList<FurnitureInput> furnitures = new ArrayList<FurnitureInput>();
-    Scanner input;
-
+public class FurnitureManager implements Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1585899128788056779L;
+	
+	ArrayList<FurnitureInput> furnitures = new ArrayList<FurnitureInput>();
+    transient Scanner input;
     FurnitureManager(Scanner input) {
         this.input = input;
     }
