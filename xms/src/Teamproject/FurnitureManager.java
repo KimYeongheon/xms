@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import TeamprojectFurniture.Furniture;
 import TeamprojectFurniture.FurnitureInput;
 import TeamprojectFurniture.FurnitureKind;
 import TeamprojectFurniture.GlassFurniture;
@@ -143,7 +144,13 @@ public class FurnitureManager implements Serializable {
         }
     }
     
-
+    public int size() {
+    	return furnitures.size();
+    }
+    
+    public FurnitureInput get(int index) {
+    	return (Furniture) furnitures.get(index);
+    }
     
     public void showEditMenu() {
         System.out.println("*** Furniture Info Edit Menu ***");

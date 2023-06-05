@@ -8,6 +8,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import gui.WindowFrame;
 import log.EventLogger;
 
 public class MenuManager2 {
@@ -21,6 +23,7 @@ public class MenuManager2 {
         	furnitureManager = new FurnitureManager(input);
         }
         
+        WindowFrame frame = new WindowFrame(furnitureManager);
         selectMenu(input, furnitureManager);
         putObject(furnitureManager, "furnituremanager.ser");
     }

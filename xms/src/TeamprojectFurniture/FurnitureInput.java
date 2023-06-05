@@ -10,11 +10,19 @@ public interface FurnitureInput {
     
     public void setId(int id);
     
+    public String getFuniture();
+    
     public void setFuniture(String funiture);
+    
+    public String getBrand();
     
     public void setBrand(String brand);
     
+    public int getPrice();
+    
     public void setPrice(int price);
+    
+    public String getCaution();
     
     public void setCaution(String caution) throws CautionFormatException;
 	
