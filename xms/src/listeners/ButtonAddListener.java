@@ -17,11 +17,9 @@ public class ButtonAddListener implements ActionListener {
 		this.frame = frame;
 	}
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton b = (JButton) e.getSource();
 		FurnitureAdder adder = frame.getFurnitureAdder();
 		frame.setupPanel(adder);
 	}
-
 }

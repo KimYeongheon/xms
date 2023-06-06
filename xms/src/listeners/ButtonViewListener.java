@@ -16,12 +16,10 @@ public class ButtonViewListener implements ActionListener {
 	public ButtonViewListener(WindowFrame frame) {
 		this.frame = frame;
 	}
-
-	@Override
+	
 	public void actionPerformed(ActionEvent e) {
 		JButton b = (JButton) e.getSource();
 		FurnitureViewer viewer = frame.getFurnitureviewer();
 		frame.setupPanel(viewer);
 	}
-
 }
