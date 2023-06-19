@@ -24,6 +24,16 @@ public class FurnitureManager implements Serializable {
     FurnitureManager(Scanner input) {
         this.input = input;
     }
+    
+    public void addFurniture(String id, String name, String brand, String cost, String caution) {
+    	FurnitureInput furnitureInput=new WoodFurniture(FurnitureKind.Wood);
+        furnitureInput.getUserInput(input);
+        furnitures.add(furnitureInput);
+    }
+    
+    public void addFurniture(FurnitureInput furnitureInput) {
+        furnitures.add(furnitureInput);
+    }
 
     public void addFurniture() {
         int kind=0;

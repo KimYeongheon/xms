@@ -7,12 +7,18 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import Teamproject.FurnitureManager;
+import listeners.FurnitureAdderCancelListener;
+import listeners.FurnitureAdderListener;
+
 public class FurnitureAdder extends JPanel {
 	
 	WindowFrame frame;
+	FurnitureManager furnitureManager;
 	
-	public FurnitureAdder(WindowFrame frame) {
+	public FurnitureAdder(WindowFrame frame, FurnitureManager furnitureManager) {
 		this.frame = frame;
+		this.furnitureManager = furnitureManager;
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
@@ -44,11 +50,18 @@ public class FurnitureAdder extends JPanel {
 		JLabel labelCaution = new JLabel("Caution: ", JLabel.TRAILING);
 		JTextField fieldCaution = new JTextField(10);
 		labelCaution.setLabelFor(fieldCaution);
+		
+		JButton saveButton = new JButton("save");
+		saveButton.addActionListener(new FurnitureAdderListener(fieldID, fieldName, fieldBrand, fieldCost, fieldCaution, furnitureManager));
+		
+		JButton cancelButton = new JButton("cancel");
+		cancelButton.addActionListener(new FurnitureAdderCancelListener(frame));
+		
 		panel.add(labelCaution);
 		panel.add(fieldCaution);
 		
-		panel.add(new JButton("save"));
-		panel.add(new JButton("cancel"));
+		panel.add(saveButton);
+		panel.add(cancelButton);
 		
 		SpringUtilities.makeCompactGrid(panel, 6, 2, 6, 6, 6, 6);
 		

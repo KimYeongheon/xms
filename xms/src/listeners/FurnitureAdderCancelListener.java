@@ -9,17 +9,17 @@ import gui.FurnitureAdder;
 import gui.FurnitureViewer;
 import gui.WindowFrame;
 
-public class ButtonAddListener implements ActionListener {
+public class FurnitureAdderCancelListener implements ActionListener {
 	
 	WindowFrame frame;
 
-	public ButtonAddListener(WindowFrame frame) {
+	public FurnitureAdderCancelListener(WindowFrame frame) {
 		this.frame = frame;
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		frame.getContentPane().removeAll();
-		frame.getContentPane().add(frame.getFurnitureAdder());
+		frame.getContentPane().add(frame.getMenuselection());
 		frame.revalidate();
 		frame.repaint();
 	}

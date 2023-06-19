@@ -16,6 +16,38 @@ public class FurnitureViewer extends JPanel {
 	WindowFrame frame;
 	
 	FurnitureManager furnitureManager;
+	
+	public FurnitureManager getFurnitureManager() {
+		return furnitureManager;
+	}
+
+	public void setFurnitureManager(FurnitureManager furnitureManager) {
+		this.furnitureManager = furnitureManager;
+		this.removeAll();
+		
+		DefaultTableModel model = new DefaultTableModel();
+		model.addColumn("ID");
+		model.addColumn("Name");
+		model.addColumn("Brand");
+		model.addColumn("Cost");
+		model.addColumn("Caution");
+		
+		for(int i = 0; i < furnitureManager.size(); i++) {
+			Vector row = new Vector();
+			FurnitureInput fi = furnitureManager.get(i);
+			row.add(fi.getId());
+			row.add(fi.getFuniture());
+			row.add(fi.getBrand());
+			row.add(fi.getPrice());
+			row.add(fi.getCaution());
+			model.addRow(row);
+		}
+			
+		JTable table = new JTable(model);
+		JScrollPane sp = new JScrollPane(table);
+		
+		this.add(sp);
+	}
 
 	public FurnitureViewer(WindowFrame frame, FurnitureManager furnitureManager) {
 		this.frame = frame;

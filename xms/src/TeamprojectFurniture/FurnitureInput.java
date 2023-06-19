@@ -20,7 +20,7 @@ public interface FurnitureInput {
     
     public int getPrice();
     
-    public void setPrice(int price);
+    public void setPrice(int string);
     
     public String getCaution();
     

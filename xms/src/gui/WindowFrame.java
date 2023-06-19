@@ -20,7 +20,7 @@ public class WindowFrame extends JFrame {
 		
 		this.furnitureManager = furnitureManager;
 		menuselection = new MenuSelection(this);
-		furnitureAdder = new FurnitureAdder(this);
+		furnitureAdder = new FurnitureAdder(this, this.furnitureManager);
 		furnitureviewer = new FurnitureViewer(this, this.furnitureManager);
 	
 		this.setupPanel(menuselection);

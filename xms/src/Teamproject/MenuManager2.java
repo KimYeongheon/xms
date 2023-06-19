@@ -97,7 +97,6 @@ public class MenuManager2 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	
     	return furnitureManager;
     }
     
